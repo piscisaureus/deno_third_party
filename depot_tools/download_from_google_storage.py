@@ -247,6 +247,7 @@ def _downloader_worker_thread(thread_num, q, force, base_url,
           continue
     # Check if file exists.
     file_url = '%s/%s' % (base_url, input_sha1_sum)
+    print "file_url", file_url
     (code, _, err) = gsutil.check_call('ls', file_url)
     if code != 0:
       if code == 404:
